@@ -1,0 +1,16 @@
+<mat-toolbar class="navigation">
+  <div class="navigation_home" (click)="onLogoClick()">
+    <span class="navigation_text">Survey Form</span>
+  </div>
+  <div class="buttons">
+    <button mat-stroked-button (click)="onQuestionClick()">Question</button>
+    <button mat-stroked-button (click)="onSurveyClick()">Survey</button>
+  </div>
+  <button
+    mat-stroked-button
+    [disabled]="buttonDisabled"
+    (click)="createClick()"
+  >
+    Create
+  </button>
+</mat-toolbar>

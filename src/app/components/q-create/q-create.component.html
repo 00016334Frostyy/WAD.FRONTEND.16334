@@ -1,0 +1,23 @@
+<mat-form-field class="field">
+  <mat-label>Text </mat-label>
+  <input matInput name="text" type="text" [(ngModel)]="createQuestion.text" />
+</mat-form-field>
+@if (!!errorObj?.['Text']) {
+<mat-error class="field_error">{{errorObj?.['Text']}}</mat-error>
+}
+
+<mat-form-field class="field">
+  <mat-label>Choose Survey</mat-label>
+  <mat-select [(ngModel)]="surveyId" name="Survey">
+    @for(s of surveys; track s.id) {
+    <mat-option [value]="s.id">{{ s.title }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+<div class="buttons">
+  <button mat-stroked-button (click)="clearForm()" class="btn-1">Clear</button>
+  <button mat-stroked-button (click)="submitForm()" class="btn-2">
+    Submit
+  </button>
+</div>

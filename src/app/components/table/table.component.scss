@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  .action_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  th {
+    background-color: #092991;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}

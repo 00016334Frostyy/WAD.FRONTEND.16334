@@ -1,0 +1,36 @@
+.navigation {
+  justify-content: space-between;
+  background-color: white;
+  padding: 0;
+
+  &_home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  &_text {
+    font-size: 30px;
+    color: #092991;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+
+    button {
+      padding: 10px 20px;
+      background-color: #092991;
+      color: #fff;
+      transition: all ease 0.3s;
+
+      &:hover {
+        background-color: #fff;
+        color: #092991;
+        transition: all ease 0.3s;
+      }
+    }
+  }
+}

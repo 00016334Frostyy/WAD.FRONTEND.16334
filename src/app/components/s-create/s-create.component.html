@@ -1,0 +1,42 @@
+<mat-form-field class="field">
+  <mat-label>Title </mat-label>
+  <input matInput name="title" type="text" [(ngModel)]="createSurvey.title" />
+</mat-form-field>
+@if (!!errorObj?.['Title']) {
+<mat-error class="field_error">{{errorObj?.['Title']}}</mat-error>
+}
+<mat-form-field class="field">
+  <mat-label>Description</mat-label>
+  <input
+    matInput
+    name="description"
+    type="text"
+    [(ngModel)]="createSurvey.description"
+  />
+</mat-form-field>
+@if (!!errorObj?.['Description']) {
+<mat-error class="field_error">{{errorObj?.['Description']}}</mat-error>
+}
+<mat-form-field class="field">
+  <mat-label>Choose a date</mat-label>
+  <input
+    matInput
+    [matDatepicker]="picker"
+    name="createdDate"
+    [(ngModel)]="createSurvey.createdDate"
+  />
+  <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+@if (!!errorObj?.['$.createdDate']) {
+<mat-error class="field_error">{{errorObj?.['$.createdDate']}}</mat-error>
+} @if (!!errorObj?.['createdDate']) {
+<mat-error class="field_error">{{errorObj?.['createdDate']}}</mat-error>
+}
+<div class="buttons">
+  <button mat-stroked-button (click)="clearForm()" class="btn-1">Clear</button>
+  <button mat-stroked-button (click)="submitForm()" class="btn-2">
+    Submit
+  </button>
+</div>
